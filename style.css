@@ -1,0 +1,252 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f2fff2;
+  color: #2e4d2e;
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  background: linear-gradient(120deg, #4caf50, #81c784);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  animation: fadeInDown 1s ease-out;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* Menu de navegação */
+nav {
+  background-color: #2e7d32;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #c8e6c9;
+}
+
+/* Conteúdo principal */
+main {
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  color: #388e3c;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+/* Animações */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dicas Sustentáveis - Tabs */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tabs button {
+  background-color: #a5d6a7;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.tabs button:hover,
+.tabs button.ativo {
+  background-color: #66bb6a;
+  color: white;
+}
+
+/* Conteúdo da dica */
+#conteudo-dica {
+  background-color: white;
+  padding: 1rem;
+  border-left: 5px solid #81c784;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+#conteudo-dica a {
+  color: #388e3c;
+  text-decoration: none;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+#conteudo-dica a:hover {
+  color: #66bb6a;
+  text-decoration: underline;
+}
+
+/* Grade de imagens */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Container para as imagens com legenda */
+.img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.img-container img {
+  display: block;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.img-container:hover img {
+  transform: scale(1.05);
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(46, 77, 46, 0.8);
+  color: white;
+  width: 100%;
+  padding: 0.6rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  font-weight: bold;
+}
+
+.img-container:hover .caption {
+  opacity: 1;
+}
+
+/* Formulário */
+form {
+  max-width: 500px;
+  margin-top: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #2e7d32;
+}
+
+/* Rodapé */
+footer {
+  background-color: #2e4d2e;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsividade extra */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .tabs {
+    justify-content: center;
+  }
+}
